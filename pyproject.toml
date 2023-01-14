@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "context-vars-poc"
+version = "0.1.0"
+description = ""
+authors = ["Lucas Silva <lucas76leonardo@gmail.com>"]
+readme = "README.md"
+packages = [{include = "context_vars_poc"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pytest = "^7.2.1"
+
+
+[tool.poetry.group.dev.dependencies]
+black = {version = "^23.1a1", allow-prereleases = true}
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
