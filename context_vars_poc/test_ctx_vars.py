@@ -99,3 +99,17 @@ def test_not_validate_email() -> None:
 def test_not_validate_username() -> None:
     with using_validation_context(False):
         assert UserName("") == ""
+
+
+def test_username_validation_on_multithreading():
+    def run():
+        UserName("")
+
+    from concurrent.futures.thread import ThreadPoolExecutor
+
+    with ThreadPoolExecutor(max_workers=1) as executor:
+        with using_validation_context(False):
+            UserName("")
+            future = executor.submit(run)
+
+            future.exception() is not None
