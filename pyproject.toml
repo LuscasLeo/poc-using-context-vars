@@ -9,6 +9,7 @@ packages = [{include = "context_vars_poc"}]
 [tool.poetry.dependencies]
 python = "^3.9"
 pytest = "^7.2.1"
+sqlalchemy = "^1.4.46"
 
 
 [tool.poetry.group.dev.dependencies]
